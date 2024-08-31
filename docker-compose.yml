@@ -62,7 +62,9 @@ services:
         condition: service_healthy
 
   housing-api:
-    image: python:3.12
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: housing-api
     entrypoint: /application/start-local.sh
     volumes: [".:/application", "/application/.venv"]

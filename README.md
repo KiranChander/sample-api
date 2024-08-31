@@ -30,13 +30,27 @@ The [psycopg2](https://www.psycopg.org) adaptor is used. Note the [installation 
 
 ### Running locally
 
-- Run `docker compose up` command from root directory to start the entire stack. The following will be started: 
-  - Postgres server 
-  - Flyway - it setups the postgres tables and inserts some dev data.
-  - sample-api server
-- Environment variables are defined in the docker-compose.yml
-- The `sample-api` folder is volume mounted, so any changes to the code will be reflected in the container 
-- The API's documentation is available at [http://localhost:3003/docs](http://localhost:3003/docs).
+#### Docker Setup
+
+The application is containerized using Docker. A Dockerfile is provided to build the Docker image for the sample API.
+
+#### Building the Docker Image
+
+To build the Docker image, run the command `docker-compose build` from the root directory. This command will build the sample-api-housing-api image using the provided Dockerfile.
+
+#### Running Locally with Docker Compose
+
+To start the entire stack locally, run the command `docker-compose up`.
+This will start the following services:
+- Postgres server
+- Flyway - Sets up the Postgres tables and inserts some dev data.
+- sample-api server
+
+Environment variables are defined in the docker-compose.yml file.
+
+The sample-api folder is volume-mounted, so any changes to the code will be reflected in the container.
+
+The API's documentation is available at http://localhost:3003/docs.
 
 
 ### Unit tests
