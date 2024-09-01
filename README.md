@@ -99,7 +99,7 @@ While the workflow is primarily triggered automatically, you can manually re-run
 
 - Navigate to the [GitHub Actions page](https://github.com/KiranChander/sample-api/actions) for the repository.
 - Select the workflow run you want to re-run.
-Click the "Re-run jobs" button to trigger the workflow manually.
+- Click the "Re-run jobs" button to trigger the workflow manually.
 
 ### Checking Workflow Status
 
@@ -109,6 +109,9 @@ Look for the most recent workflow run. Click on it to view details, including jo
 
 By following these instructions, you can monitor and manage the CI workflow for your repository, ensuring that your builds and tests run as expected.
 
+### Note:
+
+To manually re-run workflows or perform other administrative tasks in this repository, you must be a collaborator with write access. If you need access, please request to be added as a collaborator to this repository.
 
 ## The API
 

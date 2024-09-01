@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased](https://github.com/KiranChander/sample-api) (2024-09-01)
 ### Added
 - Created `Dockerfile` to build the sample-api FastAPI application.
-- Created GitHub Actions CI workflow `ci.yaml` for Docker image build, push, and unit testing.
+- Created GitHub Actions CI workflow `ci.yaml` for Docker image build, push (to ghcr.io), and unit testing.
 
 ### Changed
 - Updated `docker-compose.yml` to include the `build` section for `housing-api`.
