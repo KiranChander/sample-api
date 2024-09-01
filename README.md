@@ -52,11 +52,62 @@ The sample-api folder is volume-mounted, so any changes to the code will be refl
 
 The API's documentation is available at http://localhost:3003/docs.
 
-
 ### Unit tests
 
 - Run `docker compose --profile test up` command to run the unit tests from the root directory. This will run the above services as well as the unit tests.
 - The folder is volume mounted, so any changes to the code will be reflected in the container and run the unit tests again.
+
+### How to Pull and Run the Docker Image
+
+To run the Docker image directly without Docker Compose, you can pull the image from the GitHub Container Registry and start a container from it, allowing you to use the application without the additional configuration and orchestration provided by Docker Compose.
+
+#### Pull the Docker Image
+
+To pull the Docker image from the GitHub Container Registry, use the command `docker pull ghcr.io/kiranchander/sample-api:latest`. This command fetches the latest version of the Docker image from the registry.
+
+#### Run the Docker Image
+
+To run the Docker image and expose it on port 3003 of your host maachine, use the command `docker run --rm -p 3003:3000 ghcr.io/kiranchander/sample-api:latest`.
+
+Once the container is running, you can access the FastAPI application by opening your web browser and navigating to http://localhost:3003
+
+The API's documentation is available at http://localhost:3003/docs.
+
+#### Stopping the Container
+To stop the running container, you can press `CTRL+C` in the terminal where the container is running. Since the `--rm` flag is used, the container will be automatically removed after it is stopped.
+
+
+## GitHub Actions CI Workflow
+
+### Triggering the Workflow
+
+The GitHub Actions CI workflow is configured to run automatically under the following conditions:
+
+- Pushes to the main Branch: Every time code is pushed to the main branch, the workflow will be triggered.
+- Pull Requests Targeting the main Branch: When a pull request is opened or updated with the main branch as the target, the workflow will be triggered.
+
+### Viewing Workflow Runs
+
+To view the status of workflow runs:
+
+- Visit the [GitHub Actions page for this repository](https://github.com/KiranChander/sample-api).
+- You will see a list of workflow runs, including their status (success, failure, or in-progress).
+
+### Manual Triggering
+
+While the workflow is primarily triggered automatically, you can manually re-run a workflow from the Actions tab:
+
+- Navigate to the [GitHub Actions page](https://github.com/KiranChander/sample-api/actions) for the repository.
+- Select the workflow run you want to re-run.
+Click the "Re-run jobs" button to trigger the workflow manually.
+
+### Checking Workflow Status
+
+After triggering the workflow, you can monitor its status on the [GitHub Actions page](https://github.com/KiranChander/sample-api/actions).
+
+Look for the most recent workflow run. Click on it to view details, including job status, logs, and any errors if present.
+
+By following these instructions, you can monitor and manage the CI workflow for your repository, ensuring that your builds and tests run as expected.
 
 
 ## The API
